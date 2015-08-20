@@ -1,0 +1,32 @@
+{
+  "name": "stash-api-client",
+  "version": "0.0.1",
+  "description": "A ReST client for Atlassian Stash",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/unit",
+    "integration-test": "mocha test/integration",
+    "test-all": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgillespie/stash-api-client.git"
+  },
+  "keywords": [
+    "git",
+    "stash",
+    "api",
+    "atlassian",
+    "rest"
+  ],
+  "author": "Sean Gillespie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sgillespie/stash-api-client/issues"
+  },
+  "homepage": "https://github.com/sgillespie/stash-api-client#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  }
+}
