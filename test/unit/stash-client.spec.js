@@ -14,10 +14,6 @@ describe('stash-client', function () {
       .options
       .baseUrl
       .should.equal('http://localhost:7990/stash')
-    stash
-      .options
-      .secure
-      .should.be.false
 
     should.not.exist(stash.options.username)
     should.not.exist(stash.options.password)
@@ -28,13 +24,11 @@ describe('stash-client', function () {
       baseUrl: 'http://git',
       username: 'user',
       password: 'password',
-      secure: true,
     }
 
     var stash = stashClient(opts)
 
     stash.options.baseUrl.should.equal(opts.baseUrl)
-    stash.options.secure.should.equal(opts.secure)
     stash.options.username.should.equal(opts.username)
     stash.options.password.should.equal(opts.password)
   })
@@ -42,12 +36,10 @@ describe('stash-client', function () {
   it('can chain options', function () {
     var stash = stashClient()
           .baseUrl('http://git')
-          .secure(true)
           .username('username')
           .password('password')
 
     stash.options.baseUrl.should.equal('http://git')
-    stash.options.secure.should.equal(true)
     stash.options.username.should.equal('username')
     stash.options.password.should.equal('password')
   })
@@ -108,11 +100,32 @@ describe('stash-client', function () {
 
     it('should PUT baseURL+suffix', function (done) {
       var _mock = mock()
-            .put('/somePath')
+            .put('/somePath', {
+              some: 'data',
+            })
             .reply(200)
 
       stash()
         .put('/somePath')
+        .send({ some: 'data' })
+        .execute()
+        .then(function () {
+          _mock.done()
+          done()
+        })
+        .catch(done)
+    })
+
+    it('should use basic authentication', function (done) {
+      var _mock = mock()
+            .get('/somePath')
+            .basicAuth({ user: 'user', pass: 'password' })
+            .reply(200)
+
+      stash()
+        .get('/somePath')
+        .username('user')
+        .password('password')
         .execute()
         .then(function () {
           _mock.done()
