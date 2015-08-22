@@ -1,0 +1,21 @@
+{
+  "extends": "eslint-config-airbnb",
+  "ecmaFeatures": {
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  }
+  "rules": {
+    "func-names": 0,
+    "indent": [1, 2, {
+      "VariableDeclarator": 2,
+    }],
+    "no-use-before-define": 0,
+    "no-var": 0,
+    "one-var": 0,
+    "space-before-function-paren": [2, "always"],
+    "semi": 0,
+    "vars-on-top": 0
+  }
+}
