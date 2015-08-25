@@ -11,6 +11,12 @@ describe('rest-client', function () {
       client.url.should.equal('http://git')
       client.method.should.equal('PUT')
     })
+
+    it('should construct with 1 arg', function () {
+      var client = restClient('http://git')
+
+      client.url.should.equal('http://git')
+    })
   })
 
   describe('RestClient', function () {
