@@ -14,7 +14,7 @@ describe('rest-client', function () {
   })
 
   describe('RestClient', function () {
-    it('should GET http://git', function (done) {
+    it('can use callbacks', function (done) {
       var mock = nock('http://git')
         .get('/')
         .reply(200)
@@ -27,7 +27,7 @@ describe('rest-client', function () {
       })
     })
 
-    it('should wrap in promise', function (done) {
+    it('can use promise', function (done) {
       var mock = nock('http://git')
         .get('/')
         .reply(200)
