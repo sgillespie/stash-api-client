@@ -10,6 +10,7 @@
     "func-names": 0,
     "indent": [1, 2, {
       "VariableDeclarator": 2,
+      "SwitchCase": 1
     }],
     "no-use-before-define": 0,
     "no-var": 0,
