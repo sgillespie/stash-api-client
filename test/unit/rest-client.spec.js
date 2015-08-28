@@ -1,19 +1,19 @@
 var nock = require('nock'),
-    restClient = require('../../lib/rest-client')
+    RestClient = require('../../lib/rest-client')
 
 require('chai').should()
 
 describe('rest-client', function () {
   describe('restClient', function () {
     it('should construct with args', function () {
-      var client = restClient('PUT', 'http://git')
+      var client = new RestClient('PUT', 'http://git')
 
       client.url.should.equal('http://git')
       client.method.should.equal('PUT')
     })
 
     it('should construct with 1 arg', function () {
-      var client = restClient('http://git')
+      var client = new RestClient('http://git')
 
       client.url.should.equal('http://git')
     })
@@ -25,7 +25,7 @@ describe('rest-client', function () {
         .get('/')
         .reply(200)
 
-      restClient('GET', 'http://git').end(function (err, data) {
+      new RestClient('GET', 'http://git').end(function (err, data) {
         if (err) return done(err)
 
         done(err, data)
@@ -38,7 +38,7 @@ describe('rest-client', function () {
         .get('/')
         .reply(200)
 
-      restClient.get('http://git')
+      new RestClient('http://git')
         .end()
         .then(function (data) {
           done(null, data)

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js lib test",
-    "test": "mocha test/unit",
+    "test": "mocha --recursive test/unit",
     "integration-test": "mocha test/integration",
     "test-all": "mocha --recursive"
   },

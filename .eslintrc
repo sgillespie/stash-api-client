@@ -15,6 +15,7 @@
     "no-use-before-define": 0,
     "no-var": 0,
     "one-var": 0,
+    "no-unused-vars": 1,
     "space-before-function-paren": [2, "always"],
     "semi": 0,
     "vars-on-top": 0
