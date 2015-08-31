@@ -46,5 +46,24 @@ describe('rest-client', function () {
         })
         .catch(done)
     })
+
+    it('should use basic auth', function (done) {
+      var mock = nock('http://git')
+            .get('/')
+            .basicAuth({
+              user: 'user',
+              pass: 'pass',
+            })
+            .reply(200)
+
+      new RestClient('GET', 'http://git')
+        .auth('user', 'pass')
+        .end()
+        .then(function () {
+          done()
+          mock.done()
+        })
+        .catch(done)
+    })
   })
 })
