@@ -1,5 +1,4 @@
-var Projects = require('../../../lib/resources/projects'),
-    StashClient = require('../../../lib/stash-client'),
+var StashClient = require('../../../lib/stash-client'),
     nock = require('nock')
 
 describe('projects', function () {
@@ -10,14 +9,16 @@ describe('projects', function () {
   })
 
   describe('createProject', function () {
+    var opts = {
+      key: 'PK',
+      name: 'My new project',
+      description: 'This is a very cool project',
+      avatar: 'data:image/png:base64:...',
+    }
+
     var mock = nock('http://git/rest/api/1.0')
-          .post('/projects', {
-            key: 'PK',
-            name: 'My new project',
-            description: 'This is a very cool project',
-            avatar: 'data:image/png:base64:...',
-          })
-          .replyWithFile(201, __dirname + '../data/create-project-response.json')
+          .post('/projects', opts)
+          .replyWithFile(200, __dirname + '/../data/create-project-response.json')
 
     it('should create project', function (done) {
       new StashClient('http://git')
@@ -30,11 +31,12 @@ describe('projects', function () {
           avatar: 'data:image/png:base64:...',
         })
         .end()
+        .then(function (resp) { return JSON.parse(resp.text) })
         .then(function (data) {
-          data.key.should.equal('PK')
-          data.name.should.equal('My new project')
-          data.description.should.equal('This is a very cool project')
-          data.avatar.should.equal('data:image/png:base64:...')
+          data.key.should.equal(opts.key)
+          data.name.should.equal(opts.name)
+          data.description.should.equal(opts.description)
+          data.avatar.should.equal(opts.avatar)
         })
         .then(function () {
           done()
