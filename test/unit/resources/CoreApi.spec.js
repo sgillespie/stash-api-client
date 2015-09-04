@@ -1,5 +1,5 @@
 var StashClient = require('../../../lib/StashClient'),
-    nock = require('nock')
+    nock = require('nock'),
     should = require('chai').should()
 
 describe('CoreApi', function () {
