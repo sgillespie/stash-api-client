@@ -11,12 +11,6 @@ describe('rest-client', function () {
       client.url.should.equal('http://git')
       client.method.should.equal('PUT')
     })
-
-    it('should construct with 1 arg', function () {
-      var client = new RestClient('http://git')
-
-      client.url.should.equal('http://git')
-    })
   })
 
   describe('RestClient', function () {
@@ -38,7 +32,7 @@ describe('rest-client', function () {
         .get('/')
         .reply(200)
 
-      new RestClient('http://git')
+      new RestClient(null, 'http://git')
         .end()
         .then(function (data) {
           done(null, data)

@@ -24,7 +24,7 @@ describe('core-api', function () {
           })
           .reply(200)
 
-    new StashClient('GET', 'http://git')
+    new StashClient('http://git')
       .auth('user', 'pass')
       .coreApi()
       .end()
