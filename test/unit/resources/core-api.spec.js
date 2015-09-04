@@ -1,4 +1,4 @@
-var StashClient = require('../../../lib/stash-client'),
+var StashClient = require('../../../lib/StashClient'),
     nock = require('nock')
     should = require('chai').should()
 

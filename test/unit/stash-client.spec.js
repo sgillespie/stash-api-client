@@ -1,6 +1,6 @@
 var should = require('chai').should(),
-    RestClient = require('../../lib/rest-client'),
-    StashClient = require('../../lib/stash-client')
+    RestClient = require('../../lib/RestClient')
+    StashClient = require('../../lib/StashClient')
 
 require('chai').should
 

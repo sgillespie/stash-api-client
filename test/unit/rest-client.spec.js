@@ -1,5 +1,5 @@
 var nock = require('nock'),
-    RestClient = require('../../lib/rest-client')
+    RestClient = require('../../lib/RestClient')
 
 require('chai').should()
 
