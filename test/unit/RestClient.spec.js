@@ -3,7 +3,7 @@ var nock = require('nock'),
 
 require('chai').should()
 
-describe('rest-client', function () {
+describe('RestClient', function () {
   describe('restClient', function () {
     it('should construct with args', function () {
       var client = new RestClient('PUT', 'http://git')

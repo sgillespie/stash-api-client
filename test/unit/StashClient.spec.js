@@ -1,10 +1,10 @@
 var should = require('chai').should(),
-    RestClient = require('../../lib/RestClient')
+    RestClient = require('../../lib/RestClient'),
     StashClient = require('../../lib/StashClient')
 
 require('chai').should
 
-describe('stash-client', function () {
+describe('StashClient', function () {
   it('should extend superagent', function () {
     StashClient.super_.should.equal(RestClient)
   })

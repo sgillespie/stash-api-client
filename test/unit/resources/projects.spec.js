@@ -1,7 +1,7 @@
 var StashClient = require('../../../lib/StashClient'),
     nock = require('nock')
 
-describe('projects', function () {
+describe('Projects', function () {
   var projects = new StashClient('http://git').coreApi().projects()
 
   it('should append /projects', function () {

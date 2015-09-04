@@ -2,7 +2,7 @@ var StashClient = require('../../../lib/StashClient'),
     nock = require('nock')
     should = require('chai').should()
 
-describe('core-api', function () {
+describe('CoreApi', function () {
   var core = new StashClient('http://git')
         .auth('user', 'pass')
         .coreApi()
