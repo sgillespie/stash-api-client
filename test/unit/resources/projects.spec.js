@@ -1,5 +1,6 @@
 var StashClient = require('../../../lib/StashClient'),
-    nock = require('nock')
+    nock = require('nock'),
+    should = require('chai').should()
 
 describe('Projects', function () {
   var projects = new StashClient('http://git').coreApi().projects()
