@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js lib test",
-    "test": "mocha --recursive test/unit",
-    "integration-test": "mocha test/integration",
-    "test-all": "mocha --recursive"
+    "test": "./node_modules/mocha/bin/mocha --recursive test/unit",
+    "integration-test": "./node_modules/mocha/bin/mocha test/integration",
+    "test-all": "./node_modules/mocha/bin/mocha --recursive"
   },
   "repository": {
     "type": "git",
