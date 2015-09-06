@@ -1,6 +1,7 @@
 # stash-api-client
 
 [![Build Status](https://travis-ci.org/sgillespie/stash-api-client.svg?branch=master)](https://travis-ci.org/sgillespie/stash-api-client)
+[![Coverage Status](https://coveralls.io/repos/sgillespie/stash-api-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/sgillespie/stash-api-client?branch=master)
 
 A rest client for Atlassian Stash
 
