@@ -1,5 +1,7 @@
 # stash-api-client
 
+[![Build Status](https://travis-ci.org/sgillespie/stash-api-client.svg?branch=master)](https://travis-ci.org/sgillespie/stash-api-client)
+
 A rest client for Atlassian Stash
 
 # Example
