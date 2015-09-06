@@ -8,8 +8,4 @@ describe('stash-api-client', function () {
     stash.url.should.equal('http://git')
     should.exist(stash.coreApi())
   })
-
-  it('should break the build', function () {
-    should.exist(undefined)
-  })
 })
