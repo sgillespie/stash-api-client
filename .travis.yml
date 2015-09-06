@@ -1,6 +1,12 @@
 language: node_js
 node_js:
   - "stable"
+before_script:
+  - sudo add-apt-repository 'deb https://sdkrepo.atlassian.com/debian/ stable contrib'
+  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B07804338C015B73
+  - sudo apt-get install apt-transport-https
+  - sudo apt-get update
+  - sudo apt-get install atlassian-plugin-sdk
 script:
   - "npm run-script lint"
   - "npm test"
