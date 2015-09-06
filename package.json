@@ -33,6 +33,7 @@
     "eslint": "^1.2.1",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.2.3",
+    "istanbul": "^0.3.19",
     "mocha": "^2.2.5",
     "mocha-lcov-reporter": "0.0.2",
     "nock": "^2.10.0"
